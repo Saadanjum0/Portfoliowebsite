@@ -10,7 +10,7 @@ const isMobile = () => {
 }
 
 const Scene = () => {
-  const orbitControlsRef = useRef()
+  const orbitControlsRef = useRef<any>(null)
   const [isMobileDevice, setIsMobileDevice] = useState(false)
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const Scene = () => {
 
   return (
     <>
+      {/* Attach OrbitControls correctly */}
       <OrbitControls
         ref={orbitControlsRef}
         enableZoom={false}
@@ -62,4 +63,3 @@ export default function Component() {
     </div>
   )
 }
-
