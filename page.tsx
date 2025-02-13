@@ -6,6 +6,7 @@ import { useRef, useState, useEffect } from "react"
 import { Header } from "./components/Header"
 import { motion } from "framer-motion"
 import { Footer } from "./components/Footer"
+import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 
 const isMobile = () => {
   if (typeof window === "undefined") return false
@@ -13,7 +14,7 @@ const isMobile = () => {
 }
 
 const Scene = () => {
-  const orbitControlsRef = useRef()
+  const orbitControlsRef = useRef<OrbitControlsImpl>(null)
   const [isMobileDevice, setIsMobileDevice] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 
